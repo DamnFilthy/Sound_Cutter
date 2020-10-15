@@ -1,19 +1,21 @@
 import moviepy.editor
 
 # Show info
-print('Данная программа вырезает из видео файла звук.\n')
+print('This program cuts audio from the video.\n')
 
 # Main loop
 flag = True
 while flag == True:
     # User input
-    name_video = input('Введите название ВИДЕО в формате: "C:\путь к файлу.mp4",\
-    \nесли файл находится со скриптом в одной дериктории \nто введите просто\
-    имя файла в формате "video.mp4".   ВАШ ВВОД: ')
+    name_video = input('Enter the  title video in the format: \
+    "C:\path\your_video.mp4",\nif your file is located in the same folder \
+    with the script \nthen just enter the file name like - "video.mp4".  \
+    VIDEO title:  ')
     print('\n')
-    name_mp3 = input('Введите название АУДИО в формате: "C:\путь к файлу.mp3",\
-    \nесли файл находится со скриптом в одной дериктории \nто введите просто\
-    имя файла в формате "audio.mp3".   ВАШ ВВОД: ')
+    name_mp3 = input('Enter the  title sound in the format: \
+    "C:\path\your_sound.mp3",\nif your file is located in the same folder \
+    with the script \nthen just enter the file name like - "sound.mp3".  \
+    SOUND title:  ')
     print('\n')
 
     # Programm logic
@@ -22,17 +24,17 @@ while flag == True:
     audio.write_audiofile(name_mp3)
 
     # Restart loop
-    print('\nВаш файл успешно записан.')
-    restart = input(' Записать еще файл? y/n:  ')
+    print('\nYour file is written.')
+    restart = input(' Cut one more? y/n:  ')
     re_flag = True
     while re_flag == True:
         if restart == 'y':
             flag = True
             re_flag = False
         elif restart == 'n':
-            print('\nСпасибо что воспользовались данной программой. До свидания.')
+            print('\nThank you for using this program. Bye.')
             flag = False
             re_flag = False
         else:
-            print('Не корректный ввод!')
-            restart = input(' Записать еще файл? y/n:  ')
+            print('Invalid input!')
+            restart = input(' Cut one more? y/n:  ')
